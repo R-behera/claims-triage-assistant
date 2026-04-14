@@ -1,0 +1,46 @@
+{
+  "slug": "claims-triage-assistant",
+  "title": "Claims Triage Assistant",
+  "project_type": "llm",
+  "domain": "Insurtech",
+  "summary": "Summarize claims packets and route cases to the right queue with explainable triage signals.",
+  "tags": [
+    "claims",
+    "triage",
+    "llm"
+  ],
+  "accent": "#0077b6",
+  "dashboard_metrics": [
+    {
+      "label": "Resolution Rate",
+      "value": "69%",
+      "delta": "+5.8%"
+    },
+    {
+      "label": "Answer Quality",
+      "value": "88%",
+      "delta": "+2.2%"
+    },
+    {
+      "label": "Ops Time Saved",
+      "value": "12h",
+      "delta": "+3h"
+    }
+  ],
+  "sample_features": {
+    "query": "Summarize the highest priority risk and recommended next step.",
+    "audience": "leadership"
+  },
+  "sample_metrics": {
+    "acquisition": 24.8,
+    "activation": 29.0,
+    "retention": 43.6,
+    "revenue": 64.6
+  },
+  "knowledge_base": [
+    "Claims Triage Assistant is positioned as a Insurtech starter that emphasizes fast iteration, clear documentation, and production-friendly interfaces.",
+    "The primary value proposition is: Summarize claims packets and route cases to the right queue with explainable triage signals.",
+    "Recommended operating model: ship a small API, add observability, validate outputs with stakeholder review, and monitor the top business KPI every week.",
+    "Typical stakeholders include analytics, operations, product, and leadership teams working on claims, triage, llm."
+  ]
+}
