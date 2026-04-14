@@ -6,13 +6,12 @@
           <meta name="viewport" content="width=device-width, initial-scale=1">
           <title>Claims Triage Assistant</title>
           <link rel="stylesheet" href="./styles.css">
-          <style>:root { --accent: #0077b6; }</style>
         </head>
-        <body>
-          <div class="page">
+        <body class="surface-ink">
+          <div class="page layout-console eyebrow-solid headline-compact modules-3 hero-align-left">
             <section class="hero">
               <div class="panel hero-copy">
-                <span class="eyebrow">LLM Workflow App</span>
+                <span class="eyebrow" data-health>Signal Watchtower</span>
                 <h1 id="project-title">Claims Triage Assistant</h1>
                 <p id="project-summary" class="lead">Summarize claims packets and route cases to the right queue with explainable triage signals.</p>
                 <ul id="project-tags" class="tag-list">
@@ -26,55 +25,84 @@
 <article class='card'><span>Ops Time Saved</span><strong>12h</strong><em>+3h</em></article>
                 </div>
                 <div class="mini-grid">
-                  <article class='mini-card'><span>Project Type</span><strong>LLM</strong></article><article class='mini-card'><span>Domain</span><strong>Insurtech</strong></article><article class='mini-card'><span>Interface</span><strong>FastAPI + Browser UI</strong></article><article class='mini-card'><span>Deployment</span><strong>Docker + CI</strong></article>
+                  <article class='mini-card'><span>Project Type</span><strong>LLM</strong></article><article class='mini-card'><span>Domain</span><strong>Insurtech</strong></article><article class='mini-card'><span>Application</span><strong>Signal Watchtower</strong></article><article class='mini-card'><span>Deployment</span><strong>Docker + CI</strong></article>
                 </div>
               </div>
             </section>
             <section class="app-grid">
-              <article class="panel module">
-                <div class="module-header">
-                  <span>Application 01</span>
-                  <h2>Workflow Inputs</h2>
-                  <p>Simulate the model-side classification or prioritization decision from input features.</p>
-                </div>
-                <textarea id="score-input"></textarea>
-                <div class="button-row">
-                  <button id="run-score">Run Scoring</button>
-                  <button id="load-defaults" class="secondary" type="button">Reload Defaults</button>
-                </div>
-                <pre id="score-output"></pre>
-              </article>
-              <article class="panel module">
-                <div class="module-header">
-                  <span>Application 02</span>
-                  <h2>Quality Review</h2>
-                  <p>Compare workflow metrics and summarize the largest operational change.</p>
-                </div>
-                <textarea id="analyze-input"></textarea>
-                <div class="button-row">
-                  <button id="run-analyze">Run Analysis</button>
-                </div>
-                <pre id="analyze-output"></pre>
-              </article>
-              <article class="panel module">
-                <div class="module-header">
-                  <span>Application 03</span>
-                  <h2>Copilot Prompt</h2>
-                  <p>Ask a grounded question and inspect the supporting context used in the answer.</p>
-                </div>
-                <textarea id="query-input" class="query-input"></textarea>
-                <div class="button-row">
-                  <button id="run-query">Run Query</button>
-                </div>
-                <pre id="query-output"></pre>
-              </article>
+              <article class="panel module js-module span-normal">
+          <div class="module-header">
+            <span>Signal 01</span>
+            <h2>Incident Prioritizer</h2>
+            <p>Simulate how incoming events are scored before they hit an operator queue.</p>
+          </div>
+          <textarea class="js-input">{
+  &quot;features&quot;: {
+    &quot;query&quot;: &quot;Summarize the highest priority risk and recommended next step.&quot;,
+    &quot;audience&quot;: &quot;leadership&quot;
+  }
+}</textarea>
+          <div class="button-row">
+            <button class="js-run" data-endpoint="/score" data-input-mode="json">Prioritize</button>
+          </div>
+          <pre class="js-output">Risk band and top signals will appear here.</pre>
+        </article>
+<article class="panel module js-module span-normal">
+          <div class="module-header">
+            <span>Signal 02</span>
+            <h2>Alert Delta Review</h2>
+            <p>Compare current operating metrics with a baseline to explain what changed.</p>
+          </div>
+          <textarea class="js-input">{
+  &quot;metrics&quot;: {
+    &quot;acquisition&quot;: 24.8,
+    &quot;activation&quot;: 29.0,
+    &quot;retention&quot;: 43.6,
+    &quot;revenue&quot;: 64.6
+  },
+  &quot;baseline&quot;: {
+    &quot;acquisition&quot;: 22.82,
+    &quot;activation&quot;: 26.68,
+    &quot;retention&quot;: 40.11,
+    &quot;revenue&quot;: 59.43
+  }
+}</textarea>
+          <div class="button-row">
+            <button class="js-run" data-endpoint="/analyze" data-input-mode="json">Compare Signals</button>
+          </div>
+          <pre class="js-output">Operational movement summary will appear here.</pre>
+        </article>
+<article class="panel module js-module span-wide">
+          <div class="module-header">
+            <span>Signal 03</span>
+            <h2>Triage Playbook</h2>
+            <p>Generate an action-oriented response plan for the next incident handling step.</p>
+          </div>
+          <textarea class="js-input">{
+  &quot;prompt&quot;: &quot;Recommend the next best action for Claims Triage Assistant.&quot;,
+  &quot;features&quot;: {
+    &quot;query&quot;: &quot;Summarize the highest priority risk and recommended next step.&quot;,
+    &quot;audience&quot;: &quot;leadership&quot;
+  },
+  &quot;metrics&quot;: {
+    &quot;acquisition&quot;: 24.8,
+    &quot;activation&quot;: 29.0,
+    &quot;retention&quot;: 43.6,
+    &quot;revenue&quot;: 64.6
+  }
+}</textarea>
+          <div class="button-row">
+            <button class="js-run" data-endpoint="/recommend" data-input-mode="json">Build Playbook</button>
+          </div>
+          <pre class="js-output">Suggested next actions and rationale will appear here.</pre>
+        </article>
             </section>
             <footer class="footer">
-              <span>Data Science + AI + LLM + RAG Portfolio</span>
+              <span>Insurtech • LLM • Signal Watchtower</span>
               <span>claims-triage-assistant</span>
             </footer>
           </div>
-          <script id="bootstrap-data" type="application/json">{"project": {"slug": "claims-triage-assistant", "title": "Claims Triage Assistant", "project_type": "llm", "domain": "Insurtech", "summary": "Summarize claims packets and route cases to the right queue with explainable triage signals.", "tags": ["claims", "triage", "llm"]}, "sample_features": {"query": "Summarize the highest priority risk and recommended next step.", "audience": "leadership"}, "sample_metrics": {"acquisition": 24.8, "activation": 29.0, "retention": 43.6, "revenue": 64.6}, "sample_query": "What is the top priority recommendation?", "knowledge_base": ["Claims Triage Assistant is positioned as a Insurtech starter that emphasizes fast iteration, clear documentation, and production-friendly interfaces.", "The primary value proposition is: Summarize claims packets and route cases to the right queue with explainable triage signals.", "Recommended operating model: ship a small API, add observability, validate outputs with stakeholder review, and monitor the top business KPI every week.", "Typical stakeholders include analytics, operations, product, and leadership teams working on claims, triage, llm."], "dashboard_metrics": [{"label": "Resolution Rate", "value": "69%", "delta": "+5.8%"}, {"label": "Answer Quality", "value": "88%", "delta": "+2.2%"}, {"label": "Ops Time Saved", "value": "12h", "delta": "+3h"}]}</script>
+          <script id="bootstrap-data" type="application/json">{"project": {"slug": "claims-triage-assistant", "title": "Claims Triage Assistant", "project_type": "llm", "domain": "Insurtech", "summary": "Summarize claims packets and route cases to the right queue with explainable triage signals.", "tags": ["claims", "triage", "llm"]}, "app_archetype": "watchtower", "ui_profile": {"layout": "console", "surface": "ink", "font_stack": "\"Space Grotesk\", \"Segoe UI\", sans-serif", "radius": 29, "shadow": 67, "eyebrow_style": "solid", "module_columns": 3, "hero_align": "left", "headline_mode": "compact"}, "app_modules": [{"label": "Signal 01", "title": "Incident Prioritizer", "description": "Simulate how incoming events are scored before they hit an operator queue.", "endpoint": "/score", "input_mode": "json", "cta": "Prioritize", "prefill": "{\n  \"features\": {\n    \"query\": \"Summarize the highest priority risk and recommended next step.\",\n    \"audience\": \"leadership\"\n  }\n}", "hint": "Risk band and top signals will appear here.", "span": "normal"}, {"label": "Signal 02", "title": "Alert Delta Review", "description": "Compare current operating metrics with a baseline to explain what changed.", "endpoint": "/analyze", "input_mode": "json", "cta": "Compare Signals", "prefill": "{\n  \"metrics\": {\n    \"acquisition\": 24.8,\n    \"activation\": 29.0,\n    \"retention\": 43.6,\n    \"revenue\": 64.6\n  },\n  \"baseline\": {\n    \"acquisition\": 22.82,\n    \"activation\": 26.68,\n    \"retention\": 40.11,\n    \"revenue\": 59.43\n  }\n}", "hint": "Operational movement summary will appear here.", "span": "normal"}, {"label": "Signal 03", "title": "Triage Playbook", "description": "Generate an action-oriented response plan for the next incident handling step.", "endpoint": "/recommend", "input_mode": "json", "cta": "Build Playbook", "prefill": "{\n  \"prompt\": \"Recommend the next best action for Claims Triage Assistant.\",\n  \"features\": {\n    \"query\": \"Summarize the highest priority risk and recommended next step.\",\n    \"audience\": \"leadership\"\n  },\n  \"metrics\": {\n    \"acquisition\": 24.8,\n    \"activation\": 29.0,\n    \"retention\": 43.6,\n    \"revenue\": 64.6\n  }\n}", "hint": "Suggested next actions and rationale will appear here.", "span": "wide"}], "sample_features": {"query": "Summarize the highest priority risk and recommended next step.", "audience": "leadership"}, "sample_metrics": {"acquisition": 24.8, "activation": 29.0, "retention": 43.6, "revenue": 64.6}, "knowledge_base": ["Claims Triage Assistant is positioned as a Insurtech starter that emphasizes fast iteration, clear documentation, and production-friendly interfaces.", "The primary value proposition is: Summarize claims packets and route cases to the right queue with explainable triage signals.", "Recommended operating model: ship a small API, add observability, validate outputs with stakeholder review, and monitor the top business KPI every week.", "Typical stakeholders include analytics, operations, product, and leadership teams working on claims, triage, llm."], "dashboard_metrics": [{"label": "Resolution Rate", "value": "69%", "delta": "+5.8%"}, {"label": "Answer Quality", "value": "88%", "delta": "+2.2%"}, {"label": "Ops Time Saved", "value": "12h", "delta": "+3h"}]}</script>
           <script src="./app.js"></script>
         </body>
         </html>

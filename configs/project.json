@@ -9,7 +9,8 @@
     "triage",
     "llm"
   ],
-  "accent": "#0077b6",
+  "accent": "#772cc8",
+  "secondary_accent": "#a96d2c",
   "dashboard_metrics": [
     {
       "label": "Resolution Rate",
@@ -42,5 +43,52 @@
     "The primary value proposition is: Summarize claims packets and route cases to the right queue with explainable triage signals.",
     "Recommended operating model: ship a small API, add observability, validate outputs with stakeholder review, and monitor the top business KPI every week.",
     "Typical stakeholders include analytics, operations, product, and leadership teams working on claims, triage, llm."
+  ],
+  "app_archetype": "watchtower",
+  "ui_profile": {
+    "layout": "console",
+    "surface": "ink",
+    "font_stack": "\"Space Grotesk\", \"Segoe UI\", sans-serif",
+    "radius": 29,
+    "shadow": 67,
+    "eyebrow_style": "solid",
+    "module_columns": 3,
+    "hero_align": "left",
+    "headline_mode": "compact"
+  },
+  "app_modules": [
+    {
+      "label": "Signal 01",
+      "title": "Incident Prioritizer",
+      "description": "Simulate how incoming events are scored before they hit an operator queue.",
+      "endpoint": "/score",
+      "input_mode": "json",
+      "cta": "Prioritize",
+      "prefill": "{\n  \"features\": {\n    \"query\": \"Summarize the highest priority risk and recommended next step.\",\n    \"audience\": \"leadership\"\n  }\n}",
+      "hint": "Risk band and top signals will appear here.",
+      "span": "normal"
+    },
+    {
+      "label": "Signal 02",
+      "title": "Alert Delta Review",
+      "description": "Compare current operating metrics with a baseline to explain what changed.",
+      "endpoint": "/analyze",
+      "input_mode": "json",
+      "cta": "Compare Signals",
+      "prefill": "{\n  \"metrics\": {\n    \"acquisition\": 24.8,\n    \"activation\": 29.0,\n    \"retention\": 43.6,\n    \"revenue\": 64.6\n  },\n  \"baseline\": {\n    \"acquisition\": 22.82,\n    \"activation\": 26.68,\n    \"retention\": 40.11,\n    \"revenue\": 59.43\n  }\n}",
+      "hint": "Operational movement summary will appear here.",
+      "span": "normal"
+    },
+    {
+      "label": "Signal 03",
+      "title": "Triage Playbook",
+      "description": "Generate an action-oriented response plan for the next incident handling step.",
+      "endpoint": "/recommend",
+      "input_mode": "json",
+      "cta": "Build Playbook",
+      "prefill": "{\n  \"prompt\": \"Recommend the next best action for Claims Triage Assistant.\",\n  \"features\": {\n    \"query\": \"Summarize the highest priority risk and recommended next step.\",\n    \"audience\": \"leadership\"\n  },\n  \"metrics\": {\n    \"acquisition\": 24.8,\n    \"activation\": 29.0,\n    \"retention\": 43.6,\n    \"revenue\": 64.6\n  }\n}",
+      "hint": "Suggested next actions and rationale will appear here.",
+      "span": "wide"
+    }
   ]
 }
